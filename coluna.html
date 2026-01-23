@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coluna do Especialista - NBA Legends</title>
+    <style>
+        /* Reutilizando suas variáveis de cores para manter o padrão */
+        :root {
+            --primary: #ce1141; 
+            --secondary: #1d428a;
+            --bg: #121212;
+            --text: #ffffff;
+        }
+
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            margin: 0; 
+            padding: 20px; 
+        }
+
+        .analysis-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .conference-title { 
+            background: #333; 
+            padding: 10px; 
+            margin: 40px 0 20px 0; 
+            border-radius: 5px; 
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* O NOVO CSS QUE TE PASSEI ANTES VAI AQUI: */
+        .analysis-card {
+            display: flex;
+            align-items: center;
+            background: #1e1e1e;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 6px solid var(--primary);
+            transition: transform 0.2s;
+        }
+
+        .analysis-card:hover {
+            transform: scale(1.01);
+            background: #252525;
+        }
+
+        .analysis-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-right: 25px;
+        }
+
+        .analysis-text h3 {
+            margin: 0 0 8px 0;
+            color: var(--primary);
+        }
+
+        .analysis-text p {
+            margin: 0;
+            line-height: 1.5;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="analysis-container">
+        <h1 style="text-align: center; font-size: 2.5rem;">PREVIEW DA TEMPORADA</h1>
+    
+    <h2 class="conference-title" style="background: var(--secondary);" >East - Atlantic Division</h2>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/boston-celtics.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Boston Celtics</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/newjersey-nets.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>New Jersey Nets</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/new-york-knicks.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>New York Knicks</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/philadelphia-76ers.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Philadelphia 76ers</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/washington-wizards.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Washington Wizards</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    
+   <h2 class="conference-title" style="background: var(--secondary);" >East - Central Division</h2>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/atlanta-hawks.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Atlanta Hawks</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/chicago-bulls.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Chicago Bulls</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/cleveland-cavaliers.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Cleveland Cavaliers</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/detroit-pistons.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Detroit Pistons</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/indiana-pacers.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Indiana Pacers</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--secondary);">
+        <img src="logos/milwaukee-bucks.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Milwaukee Bucks</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <h2 class="conference-title" style="background: var(--primary);">West - Midwest Division</h2>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/dallas-mavericks.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Dallas Mavericks</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/denver-nuggets.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Denver Nuggets</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/houston-rockets.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Houston Rockets</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/sacramento-kings.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Sacramento Kings</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+        <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/san-antonio-spurs.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>San Antonio Spurs</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+
+        <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/utah-jazz.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Utah Jazz</h3>
+            <p>[Insira a análise aqui]</p>
+        </div>
+    </div>
+<h2 class="conference-title" style="background: var(--primary);">West - Pacific Division</h2>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/golden-state-warriors.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Golden State Warriors</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/la-clippers.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>LA Clippers</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/la-lakers.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>LA Lakers</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/okc-thunder.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>OKC Thunder</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/phoenix-suns.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Phoenix Suns</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+    <div class="analysis-card" style="border-left-color: var(--primary);">
+        <img src="logos/portland-trailblazers.png" class="analysis-logo">
+        <div class="analysis-text">
+            <h3>Portland Trail Blazers</h3>
+            <p>[Insira a análise aqui...]</p>
+        </div>
+    </div>
+
+

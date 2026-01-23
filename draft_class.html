@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --primary: #ce1141; 
+            --secondary: #1d428a;
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #ffffff;
+        }
+
+        body { 
+            font-family: 'Verdana', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            padding: 20px; 
+        }
+
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo da Tabela de Prospectos */
+        .draft-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .draft-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .draft-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        .draft-table tr:hover { background: #252525; }
+
+        /* Badge de Posição ou Rank */
+        .rank-badge {
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Espaço para Imagem/Mock Draft */
+        .mock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .prospect-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .prospect-card:hover { border-color: var(--primary); }
+
+        .prospect-img {
+            width: 120px;
+            height: 120px;
+            background: #000;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>DRAFT CLASS 1987</h1>
+        <p style="color: #888;">Projeções e Atributos dos principais calouros da classe</p>
+    </div>
+
+    <table class="draft-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Nome do Jogador</th>
+                <th>Posição</th>
+                <th>Universidade/País</th>
+                <th>Projeção</th>
+                <th>Potencial</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="rank-badge">#1</span></td>
+                <td><b>David Robinson</b></td>
+                <td>C</td>
+                <td>Navy</td>
+                <td>Top 3</td>
+                <td style="color: #4CAF50;">A+</td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge">#2</span></td>
+                <td><b>Scottie Pippen</b></td>
+                <td>SF</td>
+                <td>Central Arkansas</td>
+                <td>Top 10</td>
+                <td style="color: #4CAF50;">A</td>
+            </tr>
+            </tbody>
+    </table>
+
+    <div class="header-section" style="border-color: var(--secondary);">
+        <h2>TOP PROSPECTOS (GALERIA)</h2>
+    </div>
+
+    <div class="mock-grid">
+        <div class="prospect-card">
+            <div class="prospect-img">FOTO</div>
+            <h3>David Robinson</h3>
+            <p style="font-size: 0.8rem; color: #888;">"O Almirante"</p>
+        </div>
+        <div class="prospect-card">
+            <div class="prospect-img">FOTO</div>
+            <h3>Scottie Pippen</h3>
+            <p style="font-size: 0.8rem; color: #888;">Defesa de Elite</p>
+        </div>
+    </div>
+
+</body>
+</html>
