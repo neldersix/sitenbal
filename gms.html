@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMs - NBA LEGENDS</title>
+    <style type="text/css">
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: 'Verdana', Geneva, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #CE1141;
+            text-transform: uppercase;
+            border-bottom: 2px solid #CE1141;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Grid de GMs */
+        .gm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card do GM */
+        .gm-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gm-card:hover {
+            transform: translateY(-5px);
+            border-color: #CE1141;
+        }
+
+        .gm-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .team-name {
+            font-size: 12px;
+            color: #AAA;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .gm-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        /* Estilo para mobile */
+        @media (max-width: 600px) {
+            .gm-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .gm-name { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>General Managers</h1>
+
+    <div class="gm-grid">
+        
+        <div class="gm-card">
+            <img src="logos/boston-celtics.png" alt="Celtics">
+            <span class="team-name">Boston Celtics</span>
+            <span class="gm-name">Renan</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/new-york-knicks.png" alt="Knicks">
+            <span class="team-name">NY Knicks</span>
+            <span class="gm-name">obreV</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/newjersey-nets.png" alt="Nets">
+            <span class="team-name">New Jersey Nets</span>
+            <span class="gm-name">Hash</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/philadelphia-76ers.png" alt="76ers">
+            <span class="team-name">Philadelphia 76ers</span>
+            <span class="gm-name">Rapha</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/chicago-bulls.png" alt="Bulls">
+            <span class="team-name">Chicago Bulls</span>
+            <span class="gm-name">MJ</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/cleveland-cavaliers.png" alt="Cavaliers">
+            <span class="team-name">Cleveland Cavaliers</span>
+            <span class="gm-name">Brenotaku</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/detroit-pistons.png" alt="Pistons">
+            <span class="team-name">Detroit Pistons</span>
+            <span class="gm-name">Capi</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/indiana-pacers.png" alt="Pacers">
+            <span class="team-name">Indiana Pacers</span>
+            <span class="gm-name">Farpa</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/milwaukee-bucks.png" alt="Bucks">
+            <span class="team-name">Milwaukee Bucks</span>
+            <span class="gm-name">Erildo</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/atlanta-hawks.png" alt="Hawks">
+            <span class="team-name">Atlanta Hawks</span>
+            <span class="gm-name">rdggs</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/washington-wizards.png" alt="Wizards">
+            <span class="team-name">Washington Wizards</span>
+            <span class="gm-name">Venez</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/la-lakers.png" alt="Lakers">
+            <span class="team-name">LA Lakers</span>
+            <span class="gm-name">NFK</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/golden-state-warriors.png" alt="Warriors">
+            <span class="team-name">GS Warriors</span>
+            <span class="gm-name">Heitor</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/houston-rockets.png" alt="Rockets">
+            <span class="team-name">Houston Rockets</span>
+            <span class="gm-name">Akashi</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/phoenix-suns.png" alt="Suns">
+            <span class="team-name">Phoenix Suns</span>
+            <span class="gm-name">Bernadowski</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/portland-trailblazers.png" alt="Blazers">
+            <span class="team-name">Portland Trail Blazers</span>
+            <span class="gm-name">Vladje</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/dallas-mavericks.png" alt="Mavericks">
+            <span class="team-name">Dallas Mavericks</span>
+            <span class="gm-name">GDanves</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/san-antonio-spurs.png" alt="Spurs">
+            <span class="team-name">San Antonio Spurs</span>
+            <span class="gm-name">xhard</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/okc-thunder.png" alt="Thunder">
+            <span class="team-name">OKC Thunder</span>
+            <span class="gm-name">Monayumi</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/utah-jazz.png" alt="Jazz">
+            <span class="team-name">Utah Jazz</span>
+            <span class="gm-name">Gab</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/la-clippers.png" alt="Clippers">
+            <span class="team-name">LA Clippers</span>
+            <span class="gm-name">Marcio</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/denver-nuggets.png" alt="Nuggets">
+            <span class="team-name">Denver Nuggets</span>
+            <span class="gm-name">Doug</span>
+        </div>
+
+        <div class="gm-card">
+            <img src="logos/sacramento-kings.png" alt="Kings">
+            <span class="team-name">Sacramento Kings</span>
+            <span class="gm-name">Guga</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
