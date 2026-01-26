@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA LEGENDS - HOME</title>
     <style>
+        /* Container principal que esconde o que sai da lateral */
+.power-ranking {
+    overflow: hidden;
+    padding: 20px 0;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* A fila que contém todos os itens */
+.ranking-list {
+    display: flex;
+    width: max-content; /* Garante que a fila não quebre linha */
+    animation: scroll-ranking 40s linear infinite; /* 40s é uma boa velocidade para 23 times */
+}
+
+@keyframes scroll-ranking {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* O loop acontece aqui */
+}
+/* Itens individuais do ranking */
+.ranking-item {
+    flex: 0 0 auto;
+    width: 150px; /* Largura fixa para cada time */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid #333;
+}
+
+.ranking-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+/* Animação de movimento */
+@keyframes scroll-ranking {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Move metade da fila para loop infinito */
+}
+
+/* Pausa o carrossel quando passar o mouse */
+.power-ranking:hover .ranking-list {
+    animation-play-state: paused;
+}
+
         :root {
             --primary: #ce1141; 
             --secondary: #1d428a;
@@ -266,39 +315,61 @@
         </div>
     </div>     
 
-    <section class="power-ranking">
-        <div class="ranking-title">
-            <h3 style="margin:0;">TOP 5 POWER RANKING</h3>
-            <span style="color:#666; font-size: 0.8rem;">Atualizado: Janeiro 2026</span>
-        </div>
-        <div class="ranking-list">
-            <div class="ranking-item">
-                <span class="rank">#1</span>
-                <img src="logos/boston-celtics.png" alt="Celtics">
-                <span class="name">Boston Celtics</span>
-            </div>
-            <div class="ranking-item">
-                <span class="rank">#2</span>
-                <img src="logos/dallas-mavericks.png" alt="Mavs">
-                <span class="name">Dallas Mavericks</span>
-            </div>
-            <div class="ranking-item">
-                <span class="rank">#3</span>
-                <img src="logos/philadelphia-76ers.png" alt="76ers">
-                <span class="name">Phila 76ers</span>
-            </div>
-            <div class="ranking-item">
-                <span class="rank">#4</span>
-                <img src="logos/houston-rockets.png" alt="Rockets">
-                <span class="name">Houston Rockets</span>
-            </div>
-            <div class="ranking-item">
-                <span class="rank">#5</span>
-                <img src="logos/new-york-knicks.png" alt="Knicks">
-                <span class="name">NY Knicks</span>
-            </div>
-        </div>
-    </section>
+<section class="power-ranking">
+    <div class="ranking-title" style="padding-left: 20px;">
+        <h3 style="margin:0;">NBA POWER RANKING</h3>
+        <span style="color:#666; font-size: 0.8rem;">Outubro 1987</span>
+    </div>
+
+<div class="ranking-list">
+    <div class="ranking-item"><span class="rank">#1</span><img src="logos/boston-celtics.png" alt="Celtics"><span class="name">Celtics</span></div>
+    <div class="ranking-item"><span class="rank">#2</span><img src="logos/dallas-mavericks.png" alt="Mavs"><span class="name">Mavericks</span></div>
+    <div class="ranking-item"><span class="rank">#3</span><img src="logos/okc-thunder.png" alt="Thunder"><span class="name">Thunder</span></div>
+    <div class="ranking-item"><span class="rank">#4</span><img src="logos/denver-nuggets.png" alt="Nuggets"><span class="name">Nuggets</span></div>
+    <div class="ranking-item"><span class="rank">#5</span><img src="logos/milwaukee-bucks.png" alt="Bucks"><span class="name">Bucks</span></div>
+    <div class="ranking-item"><span class="rank">#6</span><img src="logos/philadelphia-76ers.png" alt="76ers"><span class="name">76ers</span></div>
+    <div class="ranking-item"><span class="rank">#7</span><img src="logos/new-york-knicks.png" alt="Knicks"><span class="name">Knicks</span></div>
+    <div class="ranking-item"><span class="rank">#8</span><img src="logos/phoenix-suns.png" alt="Suns"><span class="name">Suns</span></div>
+    <div class="ranking-item"><span class="rank">#9</span><img src="logos/indiana-pacers.png" alt="Pacers"><span class="name">Pacers</span></div>
+    <div class="ranking-item"><span class="rank">#10</span><img src="logos/la-lakers.png" alt="Lakers"><span class="name">Lakers</span></div>
+    <div class="ranking-item"><span class="rank">#11</span><img src="logos/la-clippers.png" alt="Clippers"><span class="name">Clippers</span></div>
+    <div class="ranking-item"><span class="rank">#12</span><img src="logos/cleveland-cavaliers.png" alt="Cavs"><span class="name">Cavaliers</span></div>
+    <div class="ranking-item"><span class="rank">#13</span><img src="logos/sacramento-kings.png" alt="Kings"><span class="name">Kings</span></div>
+    <div class="ranking-item"><span class="rank">#14</span><img src="logos/golden-state-warriors.png" alt="Warriors"><span class="name">Warriors</span></div>
+    <div class="ranking-item"><span class="rank">#15</span><img src="logos/houston-rockets.png" alt="Rockets"><span class="name">Rockets</span></div>
+    <div class="ranking-item"><span class="rank">#16</span><img src="logos/chicago-bulls.png" alt="Bulls"><span class="name">Bulls</span></div>
+    <div class="ranking-item"><span class="rank">#17</span><img src="logos/atlanta-hawks.png" alt="Hawks"><span class="name">Hawks</span></div>
+    <div class="ranking-item"><span class="rank">#18</span><img src="logos/san-antonio-spurs.png" alt="Spurs"><span class="name">Spurs</span></div>
+    <div class="ranking-item"><span class="rank">#19</span><img src="logos/utah-jazz.png" alt="Jazz"><span class="name">Jazz</span></div>
+    <div class="ranking-item"><span class="rank">#20</span><img src="logos/brooklyn-nets.png" alt="Nets"><span class="name">Nets</span></div>
+    <div class="ranking-item"><span class="rank">#21</span><img src="logos/portland-trailblazers.png" alt="Blazers"><span class="name">Blazers</span></div>
+    <div class="ranking-item"><span class="rank">#22</span><img src="logos/washington-wizards.png" alt="Wizards"><span class="name">Wizards</span></div>
+    <div class="ranking-item"><span class="rank">#23</span><img src="logos/detroit-pistons.png" alt="Pistons"><span class="name">Pistons</span></div>
+
+    <div class="ranking-item"><span class="rank">#1</span><img src="logos/boston-celtics.png" alt="Celtics"><span class="name">Celtics</span></div>
+    <div class="ranking-item"><span class="rank">#2</span><img src="logos/dallas-mavericks.png" alt="Mavs"><span class="name">Mavericks</span></div>
+    <div class="ranking-item"><span class="rank">#3</span><img src="logos/okc-thunder.png" alt="Thunder"><span class="name">Thunder</span></div>
+    <div class="ranking-item"><span class="rank">#4</span><img src="logos/denver-nuggets.png" alt="Nuggets"><span class="name">Nuggets</span></div>
+    <div class="ranking-item"><span class="rank">#5</span><img src="logos/milwaukee-bucks.png" alt="Bucks"><span class="name">Bucks</span></div>
+    <div class="ranking-item"><span class="rank">#6</span><img src="logos/philadelphia-76ers.png" alt="76ers"><span class="name">76ers</span></div>
+    <div class="ranking-item"><span class="rank">#7</span><img src="logos/new-york-knicks.png" alt="Knicks"><span class="name">Knicks</span></div>
+    <div class="ranking-item"><span class="rank">#8</span><img src="logos/phoenix-suns.png" alt="Suns"><span class="name">Suns</span></div>
+    <div class="ranking-item"><span class="rank">#9</span><img src="logos/indiana-pacers.png" alt="Pacers"><span class="name">Pacers</span></div>
+    <div class="ranking-item"><span class="rank">#10</span><img src="logos/la-lakers.png" alt="Lakers"><span class="name">Lakers</span></div>
+    <div class="ranking-item"><span class="rank">#11</span><img src="logos/la-clippers.png" alt="Clippers"><span class="name">Clippers</span></div>
+    <div class="ranking-item"><span class="rank">#12</span><img src="logos/cleveland-cavaliers.png" alt="Cavs"><span class="name">Cavaliers</span></div>
+    <div class="ranking-item"><span class="rank">#13</span><img src="logos/sacramento-kings.png" alt="Kings"><span class="name">Kings</span></div>
+    <div class="ranking-item"><span class="rank">#14</span><img src="logos/golden-state-warriors.png" alt="Warriors"><span class="name">Warriors</span></div>
+    <div class="ranking-item"><span class="rank">#15</span><img src="logos/houston-rockets.png" alt="Rockets"><span class="name">Rockets</span></div>
+    <div class="ranking-item"><span class="rank">#16</span><img src="logos/chicago-bulls.png" alt="Bulls"><span class="name">Bulls</span></div>
+    <div class="ranking-item"><span class="rank">#17</span><img src="logos/atlanta-hawks.png" alt="Hawks"><span class="name">Hawks</span></div>
+    <div class="ranking-item"><span class="rank">#18</span><img src="logos/san-antonio-spurs.png" alt="Spurs"><span class="name">Spurs</span></div>
+    <div class="ranking-item"><span class="rank">#19</span><img src="logos/utah-jazz.png" alt="Jazz"><span class="name">Jazz</span></div>
+    <div class="ranking-item"><span class="rank">#20</span><img src="logos/brooklyn-nets.png" alt="Nets"><span class="name">Nets</span></div>
+    <div class="ranking-item"><span class="rank">#21</span><img src="logos/portland-trailblazers.png" alt="Blazers"><span class="name">Blazers</span></div>
+    <div class="ranking-item"><span class="rank">#22</span><img src="logos/washington-wizards.png" alt="Wizards"><span class="name">Wizards</span></div>
+    <div class="ranking-item"><span class="rank">#23</span><img src="logos/detroit-pistons.png" alt="Pistons"><span class="name">Pistons</span></div>
+</section>
 
     <h2 class="news-section-title">Últimas da Liga</h2>
     <div class="news-grid">
