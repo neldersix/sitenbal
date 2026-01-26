@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRÉ-SEASON - NBA LEGENDS</title>
+    <style>
+        :root {
+            --primary: #ce1141; 
+            --secondary: #1d428a;
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #ffffff;
+            --subtext: #a8a8a8;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .preseason-container {
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border-top: 5px solid var(--primary);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .preseason-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .badge-pre {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .menu-links {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-link {
+            background: #252525;
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-link:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .nav-link span {
+            font-size: 1.2rem;
+        }
+
+        .footer-info {
+            margin-top: 40px;
+            color: var(--subtext);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preseason-container">
+        <span class="badge-pre">Em Preparação</span>
+        <h1>NBA LEGENDS</h1>
+        <p style="color: var(--subtext);">Acompanhe os dados da pré-temporada e organize seu elenco.</p>
+
+        <nav class="menu-links">
+            <a href="NBAStandings.html" class="nav-link">
+                Standings <span>➔</span>
+            </a>
+            <a href="NBALeagueLeaders.html" class="nav-link">
+                League Leaders <span>➔</span>
+            </a>
+            <a href="rosters.html" class="nav-link">
+                Team Rosters <span>➔</span>
+            </a>
+            <a href="PlayerIndex.html" class="nav-link">
+                Players <span>➔</span>
+            </a>            
+        </nav>
+
+        <div class="footer-info">
+            &copy; 2026 NBA LEGENDS - Pré-Season Hub
+        </div>
+    </div>
+
+</body>
+</html>

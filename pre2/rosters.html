@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Rosters</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #121212; color: white; margin: 0; padding: 20px; text-align: center; }
+        
+        h1 { color: #ce1141; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+
+        .conference-title { background: #333; padding: 10px; margin-top: 40px; border-radius: 5px; }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .team-card {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 15px;
+            transition: transform 0.3s, background 0.3s;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            background: #ce1141;
+            border-color: #fff;
+        }
+
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .team-name { font-weight: bold; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+
+    <h1>ROSTERS</h1>
+
+    <h2 class="conference-title">Conferência Leste</h2>
+    <div class="team-grid">
+        <a href="html-preview/BOSCeltics_Roster.html" class="team-card">
+            <img src="logos/boston-celtics.png" alt="Celtics">
+            <span class="team-name">Boston Celtics</span>
+        </a>
+        <a href="html-preview/BKNNets_Roster.html" class="team-card">
+            <img src="logos/brooklyn-nets.png" alt="Nets">
+            <span class="team-name">Brooklyn Nets</span>
+        </a>
+        <a href="html-preview/NYKKnicks_Roster.html" class="team-card">
+            <img src="logos/new-york-knicks.png" alt="Knicks">
+            <span class="team-name">NY Knicks</span>
+        </a>
+        <a href="html-preview/PHI76ers_Roster.html" class="team-card">
+            <img src="logos/philadelphia-76ers.png" alt="76ers">
+            <span class="team-name">Philadelphia 76ers</span>
+        </a>
+        <a href="html-preview/CHIBulls_Roster.html" class="team-card">
+            <img src="logos/chicago-bulls.png" alt="Bulls">
+            <span class="team-name">Chicago Bulls</span>
+        </a>
+        <a href="html-preview/CLECavaliers_Roster.html" class="team-card">
+            <img src="logos/cleveland-cavaliers.png" alt="Cavaliers">
+            <span class="team-name">Cleveland Cavaliers</span>
+        </a>
+        <a href="html-preview/DETPistons_Roster.html" class="team-card">
+            <img src="logos/detroit-pistons.png" alt="Pistons">
+            <span class="team-name">Detroit Pistons</span>
+        </a>
+        <a href="html-preview/INDPacers_Roster.html" class="team-card">
+            <img src="logos/indiana-pacers.png" alt="Pacers">
+            <span class="team-name">Indiana Pacers</span>
+        </a>
+        <a href="html-preview/MILBucks_Roster.html" class="team-card">
+            <img src="logos/milwaukee-bucks.png" alt="Bucks">
+            <span class="team-name">Milwaukee Bucks</span>
+        </a>
+        <a href="html-preview/ATLHawks_Roster.html" class="team-card">
+            <img src="logos/atlanta-hawks.png" alt="Hawks">
+            <span class="team-name">Atlanta Hawks</span>
+        </a>
+        <a href="html-preview/WASWizards_Roster.html" class="team-card">
+            <img src="logos/washington-wizards.png" alt="Wizards">
+            <span class="team-name">Washington Wizards</span>
+        </a>
+    </div>
+
+    <h2 class="conference-title">Conferência Oeste</h2>
+    <div class="team-grid">
+        <a href="html-preview/DENNuggets_Roster.html" class="team-card">
+            <img src="logos/denver-nuggets.png" alt="Nuggets">
+            <span class="team-name">Denver Nuggets</span>
+        </a>
+        <a href="html-preview/OKCThunder_Roster.html" class="team-card">
+            <img src="logos/okc-thunder.png" alt="Thunder">
+            <span class="team-name">OKC Thunder</span>
+        </a>
+        <a href="html-preview/PORTrail Blazers_Roster.html" class="team-card">
+            <img src="logos/portland-trailblazers.png" alt="Blazers">
+            <span class="team-name">Portland Trail Blazers</span>
+        </a>
+        <a href="html-preview/UTAJazz_Roster.html" class="team-card">
+            <img src="logos/utah-jazz.png" alt="Jazz">
+            <span class="team-name">Utah Jazz</span>
+        </a>
+        <a href="html-preview/GSWWarriors_Roster.html" class="team-card">
+            <img src="logos/golden-state-warriors.png" alt="Warriors">
+            <span class="team-name">GS Warriors</span>
+        </a>
+        <a href="html-preview/LACClippers_Roster.html" class="team-card">
+            <img src="logos/la-clippers.png" alt="Clippers">
+            <span class="team-name">LA Clippers</span>
+        </a>
+        <a href="html-preview/LALLakers_Roster.html" class="team-card">
+            <img src="logos/la-lakers.png" alt="Lakers">
+            <span class="team-name">LA Lakers</span>
+        </a>
+        <a href="html-preview/PHXSuns_Roster.html" class="team-card">
+            <img src="logos/phoenix-suns.png" alt="Suns">
+            <span class="team-name">Phoenix Suns</span>
+        </a>
+        <a href="html-preview/SACKings_Roster.html" class="team-card">
+            <img src="logos/sacramento-kings.png" alt="Kings">
+            <span class="team-name">Sacramento Kings</span>
+        </a>
+
+        <a href="html-preview/DALMavericks_Roster.html" class="team-card">
+            <img src="logos/dallas-mavericks.png" alt="Mavericks">
+            <span class="team-name">Dallas Mavericks</span>
+        </a>
+        <a href="html-preview/HOURockets_Roster.html" class="team-card">
+            <img src="logos/houston-rockets.png" alt="Rockets">
+            <span class="team-name">Houston Rockets</span>
+        </a>
+        <a href="html-preview/SASSpurs_Roster.html" class="team-card">
+            <img src="logos/san-antonio-spurs.png" alt="Spurs">
+            <span class="team-name">San Antonio Spurs</span>
+        </a>
+    </div>
