@@ -1,164 +1,160 @@
-<style type="text/css">
-    /* Estilo Geral da Tabela - NBA LEGENDS */
-    table.tableizer-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-family: 'Verdana', Geneva, sans-serif; /* Fonte padrão do site */
-        background-color: #121212;
-        color: #FFFFFF;
-        font-size: 11px;
-        border: 1px solid #333;
-    } 
+<section class="prospects-section">
+    <style>
+        .draft-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e1e1e;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .draft-table th {
+            background: #1d428a; /* Azul Draft */
+            padding: 15px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+        .draft-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        .draft-table tr:hover { background: #252525; }
+        .pos-badge { background: #ce1141; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; display: inline-block; width: 25px; text-align: center; }
+        .age-text { color: #f1c40f; font-weight: bold; }
+        .college-label { color: #888; font-size: 0.8rem; }
+        .zero-stat { color: #444; }
+    </style>
 
-    /* Cabeçalho Profissional */
-    .tableizer-table th {
-        background-color: #CE1141; /* Vermelho padrão */
-        color: #FFF;
-        font-weight: bold;
-        padding: 12px 5px;
-        text-transform: uppercase;
-        border: 1px solid #333;
-    }
+    <table class="draft-table">
+        <thead>
+            <tr>
+                <th>Pos</th>
+                <th>Prospecto / College</th>
+                <th>Idade</th>
+                <th>PPG</th>
+                <th>RPG</th>
+                <th>APG</th>
+            </tr>
+        </thead>
+        <tbody>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Kawhi Leonard</b><br><span class="college-label">San Diego State</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Kyrie Irving</b><br><span class="college-label">Duke</span></td><td class="age-text">19</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Nikola Vucevic</b><br><span class="college-label">USC</span></td><td class="age-text">21</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Jimmy Butler</b><br><span class="college-label">Marquette</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Tobias Harris</b><br><span class="college-label">Tennessee</span></td><td class="age-text">FR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Jonas Valanciunas</b><br><span class="college-label">None</span></td><td class="age-text">20</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Enes Kanter</b><br><span class="college-label">None</span></td><td class="age-text">19</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Isaiah Thomas</b><br><span class="college-label">Washington</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Kemba Walker</b><br><span class="college-label">Connecticut</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Reggie Jackson</b><br><span class="college-label">Boston College</span></td><td class="age-text">21</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
 
-    /* Células de Dados - Sem destaques de cores */
-    .tableizer-table td {
-        padding: 8px 5px;
-        border: 1px solid #222;
-        text-align: center;
-        color: #FFFFFF; /* Garante que todos os números tenham a mesma cor */
-    }
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Klay Thompson</b><br><span class="college-label">Washington State</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Nikola Mirotic</b><br><span class="college-label">None</span></td><td class="age-text">23</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>MarShon Brooks</b><br><span class="college-label">Providence</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Kenneth Faried</b><br><span class="college-label">Morehead State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Bojan Bogdanovic</b><br><span class="college-label">None</span></td><td class="age-text">25</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Brandon Knight</b><br><span class="college-label">Kentucky</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Marcus Morris</b><br><span class="college-label">Kansas</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Chandler Parsons</b><br><span class="college-label">Florida</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Alec Burks</b><br><span class="college-label">Colorado</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Markieff Morris</b><br><span class="college-label">Kansas</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
 
-    /* Efeito de leitura para o GM não se perder na linha */
-    .tableizer-table tr:hover {
-        background-color: #1e1e1e;
-    }
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Tristan Thompson</b><br><span class="college-label">Texas</span></td><td class="age-text">20</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Shelvin Mack</b><br><span class="college-label">Butler</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Cory Joseph</b><br><span class="college-label">Texas</span></td><td class="age-text">20</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Davis Bertans</b><br><span class="college-label">None</span></td><td class="age-text">19</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Bismack Biyombo</b><br><span class="college-label">None</span></td><td class="age-text">19</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Jordan Hamilton</b><br><span class="college-label">Texas</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>E'Twaun Moore</b><br><span class="college-label">Purdue</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Jon Leuer</b><br><span class="college-label">Wisconsin</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>DeAndre Liggins</b><br><span class="college-label">Kentucky</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Donatas Motiejunas</b><br><span class="college-label">None</span></td><td class="age-text">22</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
 
-    /* Coluna do Nome - Alinhada para leitura */
-    .tableizer-table td:nth-child(2) {
-        text-align: left;
-        font-weight: bold;
-        padding-left: 10px;
-    }
-</style>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Derrick Williams</b><br><span class="college-label">Arizona</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Malcolm Thomas</b><br><span class="college-label">San Diego State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Iman Shumpert</b><br><span class="college-label">Georgia Tech</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Bendiks Sidlin</b><br><span class="college-label">Latvia</span></td><td class="age-text">18</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Norris Cole</b><br><span class="college-label">Cleveland State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Trey Thompkins</b><br><span class="college-label">Georgia</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Kyle Singler</b><br><span class="college-label">Duke</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Bryant Smith</b><br><span class="college-label">Boise State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Hamilton Greer</b><br><span class="college-label">Miami (FL)</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Lavoy Allen</b><br><span class="college-label">Temple</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
 
-<table class="tableizer-table">
-<thead>
-    <tr class="tableizer-firstrow">
-        <th>POS</th>
-        <th>PLAYER</th>
-        <th>HT</th>
-        <th>WT</th>
-        <th>AGE</th>
-        <th>FROM</th>
-        <th>COLLEGE</th>
-        <th>CUR</th>
-        <th>POT</th>
-        <th>PPG</th>
-        <th>APG</th>
-        <th>RPG</th>
-        <th>BPG</th>
-        <th>SPG</th>
-    </tr>
-</thead>
-<tbody>
-    <tr><td>SF</td><td>Metta World Peace</td><td>6-6</td><td>244</td><td>21</td><td>🇺🇸</td><td>St. John's</td><td>3</td><td>3</td><td>36,2</td><td>7</td><td>11,1</td><td>1,6</td><td>3,6</td></tr>
-    <tr><td>PG</td><td>Chucky Atkins</td><td>5-11</td><td>160</td><td>26</td><td>🇺🇸</td><td>South Florida</td><td>1</td><td>3</td><td>20,8</td><td>9</td><td>6</td><td>0,7</td><td>1,8</td></tr>
-    <tr><td>PG</td><td>William Avery</td><td>6-2</td><td>197</td><td>21</td><td>🇺🇸</td><td>Duke</td><td>1</td><td>1</td><td>7</td><td>3</td><td>3,3</td><td>0,6</td><td>0,6</td></tr>
-    <tr><td>SF</td><td>Jonathan Bender</td><td>6-11</td><td>202</td><td>20</td><td>🇺🇸</td><td>None</td><td>1</td><td>2</td><td>10</td><td>2,6</td><td>4,7</td><td>1,5</td><td>0,6</td></tr>
-    <tr><td>C</td><td>Calvin Booth</td><td>6-11</td><td>230</td><td>24</td><td>🇺🇸</td><td>Penn State</td><td>3</td><td>3</td><td>13,6</td><td>3</td><td>8,5</td><td>3</td><td>1,4</td></tr>
-    <tr><td>SF</td><td>Lazaro Borrell</td><td>6-8</td><td>220</td><td>28</td><td>🇨🇺</td><td>None</td><td>1</td><td>2</td><td>8,8</td><td>2,4</td><td>5,6</td><td>0,8</td><td>0,9</td></tr>
-    <tr><td>SF</td><td>Cal Bowdler</td><td>6-10</td><td>245</td><td>23</td><td>🇺🇸</td><td>Old Dominion</td><td>1</td><td>2</td><td>9,5</td><td>2,6</td><td>5,8</td><td>1,3</td><td>0,9</td></tr>
-    <tr><td>SG</td><td>Ira Bowman</td><td>6-5</td><td>195</td><td>27</td><td>🇺🇸</td><td>Pennsylvania</td><td>2</td><td>2</td><td>7,7</td><td>4,2</td><td>2,9</td><td>0,6</td><td>1,1</td></tr>
-    <tr><td>C</td><td>A.J. Bramlett</td><td>6-10</td><td>227</td><td>24</td><td>🇺🇸</td><td>Arizona</td><td>1</td><td>1</td><td>6,3</td><td>2,1</td><td>5,9</td><td>0,7</td><td>0,5</td></tr>
-    <tr><td>PF</td><td>Elton Brand</td><td>6-8</td><td>275</td><td>21</td><td>🇺🇸</td><td>Duke</td><td>2</td><td>3</td><td>31</td><td>5,1</td><td>13,8</td><td>3</td><td>1,7</td></tr>
-    <tr><td>SF</td><td>Rodney Buford</td><td>6-5</td><td>189</td><td>23</td><td>🇺🇸</td><td>Creighton</td><td>1</td><td>2</td><td>15,5</td><td>3,3</td><td>8,2</td><td>0,8</td><td>1,2</td></tr>
-    <tr><td>PG</td><td>Anthony Carter</td><td>6-1</td><td>190</td><td>25</td><td>🇺🇸</td><td>Hawaii</td><td>2</td><td>2</td><td>14,6</td><td>8,9</td><td>5,9</td><td>1,1</td><td>2,3</td></tr>
-    <tr><td>PG</td><td>John Celestand</td><td>6-4</td><td>178</td><td>23</td><td>🇺🇸</td><td>Villanova</td><td>1</td><td>1</td><td>7</td><td>2,9</td><td>3,2</td><td>0,6</td><td>0,9</td></tr>
-    <tr><td>PG</td><td>Vonteego Cummings</td><td>6-3</td><td>185</td><td>24</td><td>🇺🇸</td><td>Pittsburgh</td><td>2</td><td>2</td><td>15,1</td><td>4,8</td><td>5,1</td><td>0,7</td><td>1,8</td></tr>
-    <tr><td>PG</td><td>Baron Davis</td><td>6-3</td><td>209</td><td>21</td><td>🇺🇸</td><td>UCLA</td><td>2</td><td>4</td><td>24,2</td><td>8,7</td><td>6,8</td><td>1</td><td>2,4</td></tr>
-    <tr><td>PF</td><td>Obinna Ekezie</td><td>6-9</td><td>270</td><td>25</td><td>🇳🇬</td><td>Maryland</td><td>1</td><td>1</td><td>12,6</td><td>2,3</td><td>8,8</td><td>1</td><td>1,1</td></tr>
-    <tr><td>C</td><td>Francisco Elson</td><td>7-0</td><td>235</td><td>28</td><td>🇳🇱</td><td>California</td><td>2</td><td>2</td><td>10,3</td><td>2,6</td><td>7,9</td><td>1,4</td><td>1,1</td></tr>
-    <tr><td>C</td><td>Evan Eschmeyer</td><td>6-11</td><td>255</td><td>25</td><td>🇺🇸</td><td>Northwestern</td><td>1</td><td>1</td><td>9,4</td><td>2,8</td><td>8,7</td><td>1,6</td><td>1,2</td></tr>
-    <tr><td>C</td><td>Jeff Foster</td><td>6-11</td><td>236</td><td>24</td><td>🇺🇸</td><td>Texas State</td><td>2</td><td>2</td><td>13,4</td><td>3,7</td><td>13</td><td>1,2</td><td>1,3</td></tr>
-    <tr><td>PG</td><td>Steve Francis</td><td>6-3</td><td>195</td><td>23</td><td>🇺🇸</td><td>Maryland</td><td>4</td><td>4</td><td>30,1</td><td>10,2</td><td>12,3</td><td>1,1</td><td>2,8</td></tr>
-    <tr><td>SF</td><td>Devean George</td><td>6-8</td><td>220</td><td>23</td><td>🇺🇸</td><td>Augsburg</td><td>2</td><td>2</td><td>14</td><td>3,6</td><td>8,3</td><td>1,2</td><td>1,7</td></tr>
-    <tr><td>SG</td><td>Manu Ginobili</td><td>6-6</td><td>210</td><td>26</td><td>🇦🇷</td><td>None</td><td>2</td><td>3</td><td>28,1</td><td>7,7</td><td>8</td><td>1</td><td>2,8</td></tr>
-    <tr><td>SG</td><td>Gordan Giricek</td><td>6-6</td><td>210</td><td>26</td><td>🇭🇷</td><td>None</td><td>4</td><td>5</td><td>22,9</td><td>4,6</td><td>7,8</td><td>0,8</td><td>1,7</td></tr>
-    <tr><td>SG</td><td>Dion Glover</td><td>6-5</td><td>228</td><td>22</td><td>🇺🇸</td><td>Georgia Tech</td><td>1</td><td>2</td><td>14,2</td><td>4,2</td><td>7,2</td><td>0,9</td><td>1,4</td></tr>
-    <tr><td>SG</td><td>Adrian Griffin</td><td>6-5</td><td>217</td><td>26</td><td>🇺🇸</td><td>Seton Hall</td><td>2</td><td>2</td><td>14,5</td><td>4,7</td><td>8,5</td><td>0,8</td><td>2,2</td></tr>
-    <tr><td>SG</td><td>Richard Hamilton</td><td>6-6</td><td>185</td><td>22</td><td>🇺🇸</td><td>Connecticut</td><td>2</td><td>3</td><td>29,8</td><td>7,3</td><td>6,9</td><td>0,8</td><td>2</td></tr>
-    <tr><td>PG</td><td>Chris Herren</td><td>6-2</td><td>197</td><td>25</td><td>🇺🇸</td><td>Cal State Fresno</td><td>2</td><td>2</td><td>9</td><td>5,1</td><td>3,9</td><td>0,7</td><td>1,2</td></tr>
-    <tr><td>PF</td><td>Derek Hood</td><td>6-8</td><td>222</td><td>24</td><td>🇺🇸</td><td>Arkansas</td><td>1</td><td>2</td><td>6,1</td><td>2,2</td><td>3,4</td><td>0,7</td><td>0,5</td></tr>
-    <tr><td>PF</td><td>Rick Hughes</td><td>6-9</td><td>235</td><td>27</td><td>🇺🇸</td><td>Thomas Moore</td><td>2</td><td>2</td><td>8,5</td><td>2,1</td><td>5</td><td>0,6</td><td>0,5</td></tr>
-    <tr><td>SG</td><td>Jermaine Jackson</td><td>6-4</td><td>204</td><td>24</td><td>🇺🇸</td><td>Detroit Mercy</td><td>1</td><td>2</td><td>7,4</td><td>4,5</td><td>4,4</td><td>0,7</td><td>0,9</td></tr>
-    <tr><td>SF</td><td>Tim James</td><td>6-7</td><td>212</td><td>24</td><td>🇺🇸</td><td>Miami</td><td>1</td><td>2</td><td>8</td><td>2,1</td><td>4,1</td><td>1,4</td><td>0,5</td></tr>
-    <tr><td>PF</td><td>Harold Jamison</td><td>6-8</td><td>260</td><td>24</td><td>🇺🇸</td><td>Clemson</td><td>2</td><td>2</td><td>7,2</td><td>2,2</td><td>5,9</td><td>0,7</td><td>0,6</td></tr>
-    <tr><td>SF</td><td>Jumaine Jones</td><td>6-8</td><td>218</td><td>21</td><td>🇺🇸</td><td>Georgia</td><td>2</td><td>2</td><td>15,5</td><td>2,9</td><td>8,8</td><td>1,1</td><td>1,2</td></tr>
-    <tr><td>PF</td><td>Lari Ketner</td><td>6-9</td><td>277</td><td>23</td><td>🇺🇸</td><td>Massachusetts</td><td>1</td><td>2</td><td>7</td><td>2,1</td><td>4,7</td><td>0,8</td><td>0,6</td></tr>
-    <tr><td>SF</td><td>Andrei Kirilenko</td><td>6-9</td><td>220</td><td>21</td><td>🇷🇺</td><td>None</td><td>3</td><td>5</td><td>23,3</td><td>6,3</td><td>12,2</td><td>4,4</td><td>2,6</td></tr>
-    <tr><td>SG</td><td>Trajan Langdon</td><td>6-3</td><td>197</td><td>24</td><td>🇺🇸</td><td>Duke</td><td>1</td><td>1</td><td>11,9</td><td>3,7</td><td>4,7</td><td>0,7</td><td>1,1</td></tr>
-    <tr><td>SF</td><td>Quincy Lewis</td><td>6-7</td><td>215</td><td>23</td><td>🇺🇸</td><td>Minnesota</td><td>1</td><td>1</td><td>9,7</td><td>3,1</td><td>4,6</td><td>1</td><td>1,3</td></tr>
-    <tr><td>C</td><td>Todd MacCulloch</td><td>7-0</td><td>280</td><td>25</td><td>🇨🇦</td><td>Washington</td><td>3</td><td>3</td><td>18,7</td><td>3,2</td><td>10,6</td><td>2,5</td><td>1</td></tr>
-    <tr><td>SF</td><td>Corey Maggette</td><td>6-6</td><td>218</td><td>21</td><td>🇺🇸</td><td>Duke</td><td>2</td><td>3</td><td>28,1</td><td>5,6</td><td>9,4</td><td>0,9</td><td>1,5</td></tr>
-    <tr><td>SF</td><td>Shawn Marion</td><td>6-7</td><td>220</td><td>22</td><td>🇺🇸</td><td>UNLV</td><td>5</td><td>5</td><td>30,9</td><td>5,4</td><td>17,3</td><td>2,7</td><td>3,3</td></tr>
-    <tr><td>PG</td><td>Andre Miller</td><td>6-2</td><td>200</td><td>24</td><td>🇺🇸</td><td>Utah</td><td>3</td><td>4</td><td>26,6</td><td>15,4</td><td>8,5</td><td>1,1</td><td>2,4</td></tr>
-    <tr><td>PG</td><td>Jason Miskiri</td><td>6-2</td><td>175</td><td>25</td><td>🇬🇾</td><td>George Mason</td><td>1</td><td>1</td><td>5,5</td><td>2,8</td><td>2,8</td><td>0,6</td><td>0,5</td></tr>
-    <tr><td>SF</td><td>Lee Nailon</td><td>6-9</td><td>238</td><td>26</td><td>🇺🇸</td><td>TCU</td><td>2</td><td>2</td><td>22,7</td><td>3,4</td><td>7,8</td><td>0,8</td><td>1,3</td></tr>
-    <tr><td>PF</td><td>Lamar Odom</td><td>6-10</td><td>220</td><td>21</td><td>🇺🇸</td><td>Rhode Island</td><td>4</td><td>4</td><td>25,6</td><td>9,8</td><td>16,1</td><td>2,6</td><td>1,8</td></tr>
-    <tr><td>PF</td><td>Scott Padgett</td><td>6-9</td><td>240</td><td>24</td><td>🇺🇸</td><td>Kentucky</td><td>1</td><td>2</td><td>12,4</td><td>3</td><td>7,4</td><td>0,9</td><td>1,1</td></tr>
-    <tr><td>PG</td><td>Milt Palacio</td><td>6-3</td><td>195</td><td>22</td><td>🇺🇸</td><td>Colorado State</td><td>1</td><td>2</td><td>10,7</td><td>4,7</td><td>5,1</td><td>0,7</td><td>1,1</td></tr>
-    <tr><td>SF</td><td>James Posey</td><td>6-8</td><td>215</td><td>24</td><td>🇺🇸</td><td>Xavier</td><td>2</td><td>2</td><td>23,7</td><td>6,2</td><td>10,8</td><td>1,3</td><td>2,5</td></tr>
-    <tr><td>SG</td><td>Laron Profit</td><td>6-5</td><td>204</td><td>23</td><td>🇺🇸</td><td>Maryland</td><td>1</td><td>2</td><td>9,3</td><td>4,8</td><td>4,8</td><td>0,8</td><td>1,7</td></tr>
-    <tr><td>C</td><td>Alek Radojevic</td><td>7-3</td><td>250</td><td>24</td><td>🇲🇪</td><td>Barton County</td><td>2</td><td>3</td><td>8</td><td>2,5</td><td>6,1</td><td>1</td><td>1,3</td></tr>
-    <tr><td>SG</td><td>Ryan Robertson</td><td>6-5</td><td>190</td><td>24</td><td>🇺🇸</td><td>Kansas</td><td>1</td><td>1</td><td>10,1</td><td>2,1</td><td>2,9</td><td>0,7</td><td>0,5</td></tr>
-    <tr><td>SF</td><td>Eddie Robinson</td><td>6-8</td><td>210</td><td>24</td><td>🇺🇸</td><td>Central OK</td><td>2</td><td>2</td><td>15,5</td><td>3,5</td><td>6,4</td><td>1,3</td><td>1,6</td></tr>
-    <tr><td>PF</td><td>Michael Ruffin</td><td>6-9</td><td>246</td><td>24</td><td>🇺🇸</td><td>Tulsa</td><td>1</td><td>2</td><td>8,5</td><td>3,1</td><td>10,3</td><td>1,6</td><td>1,3</td></tr>
-    <tr><td>C</td><td>Leon Smith</td><td>6-10</td><td>235</td><td>22</td><td>🇺🇸</td><td>None</td><td>1</td><td>2</td><td>7,3</td><td>2,2</td><td>5,5</td><td>0,7</td><td>0,9</td></tr>
-    <tr><td>SF</td><td>Wally Szczerbiak</td><td>6-7</td><td>244</td><td>23</td><td>🇪🇸</td><td>Miami</td><td>2</td><td>3</td><td>33,4</td><td>6,3</td><td>10,2</td><td>1,2</td><td>1,5</td></tr>
-    <tr><td>SG</td><td>Jason Terry</td><td>6-2</td><td>176</td><td>23</td><td>🇺🇸</td><td>Arizona</td><td>3</td><td>3</td><td>28,7</td><td>10,3</td><td>7,3</td><td>0,9</td><td>2,7</td></tr>
-    <tr><td>SF</td><td>Jamel Thomas</td><td>6-6</td><td>215</td><td>27</td><td>🇺🇸</td><td>Providence</td><td>1</td><td>2</td><td>9,9</td><td>2,9</td><td>4,9</td><td>0,7</td><td>1,2</td></tr>
-    <tr><td>PF</td><td>Kenny Thomas</td><td>6-7</td><td>261</td><td>23</td><td>🇺🇸</td><td>New Mexico</td><td>3</td><td>4</td><td>23,6</td><td>5,6</td><td>15,4</td><td>1,8</td><td>1,9</td></tr>
-    <tr><td>PG</td><td>Wayne Turner</td><td>6-2</td><td>190</td><td>24</td><td>🇺🇸</td><td>Kentucky</td><td>1</td><td>1</td><td>6,1</td><td>3,4</td><td>3,4</td><td>0,6</td><td>0,5</td></tr>
-    <tr><td>PG</td><td>Dedric Willoughby</td><td>6-3</td><td>180</td><td>26</td><td>🇺🇸</td><td>Iowa State</td><td>1</td><td>1</td><td>12,7</td><td>4,9</td><td>4,4</td><td>0,6</td><td>1,5</td></tr>
-    <tr><td>C</td><td>Tim Young</td><td>7-0</td><td>220</td><td>24</td><td>🇺🇸</td><td>Stanford</td><td>2</td><td>2</td><td>7,9</td><td>2,2</td><td>4,3</td><td>0,7</td><td>0,5</td></tr>
-    <tr><td>C</td><td>Wang Zhizhi</td><td>7-0</td><td>255</td><td>24</td><td>🇨🇳</td><td>None</td><td>1</td><td>1</td><td>11,3</td><td>2,2</td><td>5,5</td><td>1,1</td><td>0,6</td></tr>
-    <tr><td>C</td><td>Pete Williamson</td><td>6-11</td><td>270</td><td>22</td><td>🇺🇸</td><td>UAB</td><td>1</td><td>1</td><td>7,4</td><td>2,7</td><td>7,2</td><td>1,4</td><td>0,7</td></tr>
-    <tr><td>PG</td><td>James Cobb</td><td>6-0</td><td>156</td><td>22</td><td>🇺🇸</td><td>Georgetown</td><td>2</td><td>2</td><td>8,5</td><td>2,7</td><td>2,9</td><td>0,7</td><td>0,5</td></tr>
-    <tr><td>SG</td><td>Emmett Perry</td><td>6-3</td><td>219</td><td>23</td><td>🇺🇸</td><td>Geo Washington</td><td>2</td><td>2</td><td>8,6</td><td>2,9</td><td>4,1</td><td>0,7</td><td>0,9</td></tr>
-    <tr><td>SF</td><td>Jerod Tarver</td><td>6-10</td><td>220</td><td>23</td><td>🇺🇸</td><td>USC</td><td>2</td><td>2</td><td>13,2</td><td>4,2</td><td>8</td><td>1,3</td><td>1,2</td></tr>
-    <tr><td>PF</td><td>Tony Durham</td><td>6-8</td><td>228</td><td>22</td><td>🇺🇸</td><td>Tennessee</td><td>1</td><td>1</td><td>6,1</td><td>2,5</td><td>7,3</td><td>1,4</td><td>0,8</td></tr>
-    <tr><td>C</td><td>Freddie Crockrom</td><td>7-0</td><td>263</td><td>23</td><td>🇺🇸</td><td>Boise State</td><td>1</td><td>1</td><td>10,9</td><td>3</td><td>7,9</td><td>1</td><td>1</td></tr>
-    <tr><td>PG</td><td>Kevin Spears</td><td>6-5</td><td>175</td><td>23</td><td>🇺🇸</td><td>Wisconsin</td><td>1</td><td>1</td><td>6,1</td><td>5,7</td><td>4,3</td><td>0,6</td><td>1,2</td></tr>
-    <tr><td>SG</td><td>Bernard Brown</td><td>6-5</td><td>217</td><td>23</td><td>🇺🇸</td><td>Coppin State</td><td>2</td><td>2</td><td>18,6</td><td>3,4</td><td>5,2</td><td>1,1</td><td>1,1</td></tr>
-    <tr><td>SF</td><td>Charles Dabney</td><td>6-6</td><td>195</td><td>22</td><td>🇺🇸</td><td>Utah</td><td>1</td><td>1</td><td>13,3</td><td>3</td><td>6,3</td><td>2,1</td><td>0,8</td></tr>
-    <tr><td>PF</td><td>KenKay Smith</td><td>6-9</td><td>247</td><td>22</td><td>🇺🇸</td><td>NM State</td><td>1</td><td>2</td><td>10,1</td><td>3,7</td><td>9,2</td><td>1</td><td>0,9</td></tr>
-    <tr><td>C</td><td>John Metcalfe</td><td>6-11</td><td>274</td><td>22</td><td>🇺🇸</td><td>Georgetown</td><td>1</td><td>1</td><td>6,3</td><td>2,3</td><td>7,7</td><td>1,2</td><td>0,7</td></tr>
-    <tr><td>PG</td><td>Jon Martin</td><td>6-3</td><td>174</td><td>23</td><td>🇺🇸</td><td>Seton Hall</td><td>1</td><td>1</td><td>12,6</td><td>5,7</td><td>4,6</td><td>1,1</td><td>1,3</td></tr>
-    <tr><td>SG</td><td>Johnny Bailey</td><td>6-7</td><td>203</td><td>22</td><td>🇺🇸</td><td>Kent State</td><td>1</td><td>1</td><td>15,7</td><td>3,5</td><td>4,4</td><td>0,7</td><td>0,6</td></tr>
-    <tr><td>SF</td><td>Nic Roma</td><td>6-8</td><td>207</td><td>22</td><td>🇺🇸</td><td>Duke</td><td>1</td><td>1</td><td>9,8</td><td>2,5</td><td>4,6</td><td>0,7</td><td>0,6</td></tr>
-    <tr><td>PF</td><td>Adam Hicks</td><td>6-10</td><td>231</td><td>23</td><td>🇺🇸</td><td>Boston College</td><td>1</td><td>2</td><td>6,1</td><td>3,1</td><td>5,4</td><td>0,8</td><td>0,7</td></tr>
-    <tr><td>C</td><td>Chris Davis</td><td>7-5</td><td>302</td><td>23</td><td>🇺🇸</td><td>Georgia</td><td>1</td><td>1</td><td>7</td><td>2,2</td><td>4</td><td>1,5</td><td>0,5</td></tr>
-    <tr><td>PG</td><td>Mills Tate</td><td>6-2</td><td>155</td><td>22</td><td>🇺🇸</td><td>Pittsburgh</td><td>1</td><td>2</td><td>15,6</td><td>7,2</td><td>4,8</td><td>0,7</td><td>1,8</td></tr>
-    <tr><td>SG</td><td>Pat McKie</td><td>6-7</td><td>208</td><td>22</td><td>🇺🇸</td><td>Central MI</td><td>1</td><td>2</td><td>6,9</td><td>4,6</td><td>5,4</td><td>0,8</td><td>0,7</td></tr>
-    <tr><td>SF</td><td>Lee Black</td><td>6-7</td><td>197</td><td>22</td><td>🇺🇸</td><td>South Carolina</td><td>2</td><td>2</td><td>5,5</td><td>5,1</td><td>6,3</td><td>0,8</td><td>0,9</td></tr>
-    <tr><td>PF</td><td>Marcus Dye</td><td>6-8</td><td>253</td><td>23</td><td>🇺🇸</td><td>Indiana</td><td>1</td><td>1</td><td>7,7</td><td>3,2</td><td>5,2</td><td>1</td><td>0,5</td></tr>
-    <tr><td>C</td><td>Brett Tuohey</td><td>7-3</td><td>266</td><td>23</td><td>🇺🇸</td><td>Baylor</td><td>2</td><td>2</td><td>7,1</td><td>2,6</td><td>3,5</td><td>0,8</td><td>0,5</td></tr>
-    <tr><td>PG</td><td>Ron Robinson</td><td>6-5</td><td>176</td><td>23</td><td>🇺🇸</td><td>GW University</td><td>1</td><td>1</td><td>10,6</td><td>2,7</td><td>3,7</td><td>0,7</td><td>0,6</td></tr>
-    <tr><td>SG</td><td>Jerry Moore</td><td>6-8</td><td>224</td><td>22</td><td>🇺🇸</td><td>UCONN</td><td>1</td><td>1</td><td>8</td><td>3,6</td><td>5,5</td><td>0,7</td><td>0,8</td></tr>
-    <tr><td>SF</td><td>Ales Dodson</td><td>6-8</td><td>214</td><td>23</td><td>🇺🇸</td><td>MS State</td><td>2</td><td>2</td><td>10,2</td><td>2,6</td><td>6,1</td><td>1,6</td><td>0,6</td></tr>
-    <tr><td>PF</td><td>Donald Cabrera</td><td>6-8</td><td>235</td><td>23</td><td>🇺🇸</td><td>Oklahoma</td><td>1</td><td>1</td><td>6,2</td><td>4,5</td><td>8,9</td><td>1</td><td>0,9</td></tr>
-    <tr><td>C</td><td>Keith Holtz</td><td>6-11</td><td>276</td><td>23</td><td>🇺🇸</td><td>Oregon</td><td>2</td><td>2</td><td>6,4</td><td>2,2</td><td>13,1</td><td>2,1</td><td>1,2</td></tr>
-    <tr><td>PG</td><td>Leon Hughes</td><td>6-1</td><td>184</td><td>23</td><td>🇺🇸</td><td>Utah</td><td>2</td><td>2</td><td>12,9</td><td>4</td><td>4,4</td><td>0,7</td><td>0,7</td></tr>
-    <tr><td>SG</td><td>John Pruitt</td><td>6-3</td><td>215</td><td>23</td><td>🇺🇸</td><td>Vanderbilt</td><td>1</td><td>1</td><td>8,4</td><td>3,1</td><td>3,3</td><td>0,7</td><td>0,6</td></tr>
-    <tr><td>SF</td><td>Matt Winn</td><td>6-7</td><td>197</td><td>22</td><td>🇺🇸</td><td>Notre Dame</td><td>1</td><td>1</td><td>7</td><td>2,5</td><td>4,3</td><td>1,1</td><td>0,5</td></tr>
-    <tr><td>PF</td><td>Donald Davis</td><td>6-10</td><td>222</td><td>23</td><td>🇺🇸</td><td>Georgia</td><td>2</td><td>3</td><td>5,3</td><td>2,9</td><td>6,9</td><td>1,1</td><td>0,8</td></tr>
-    <tr><td>C</td><td>Kyle Sarpy</td><td>6-10</td><td>280</td><td>23</td><td>🇺🇸</td><td>Pittsburgh</td><td>2</td><td>3</td><td>9,1</td><td>3,3</td><td>5,6</td><td>0,9</td><td>0,6</td></tr>
-    <tr><td>PG</td><td>Kyle Hazelton</td><td>6-1</td><td>165</td><td>22</td><td>🇺🇸</td><td>Texas</td><td>1</td><td>2</td><td>10,3</td><td>3,6</td><td>3,2</td><td>0,7</td><td>0,6</td></tr>
-    <tr><td>SG</td><td>Robbie Poole</td><td>6-4</td><td>214</td><td>23</td><td>🇺🇸</td><td>Ohio</td><td>2</td><td>2</td><td>5,7</td><td>5,6</td><td>6,4</td><td>0,7</td><td>0,8</td></tr>
-    <tr><td>SF</td><td>Jay Pangrazio</td><td>6-10</td><td>199</td><td>22</td><td>🇺🇸</td><td>USC</td><td>2</td><td>2</td><td>12,5</td><td>5</td><td>7,3</td><td>1,3</td><td>1</td></tr>
-    <tr><td>PF</td><td>Vince Alford</td><td>6-11</td><td>224</td><td>22</td><td>🇺🇸</td><td>Arkansas</td><td>1</td><td>1</td><td>6,4</td><td>2,6</td><td>9</td><td>0,8</td><td>1,3</td></tr>
-    <tr><td>C</td><td>Mathew Lancaster</td><td>6-11</td><td>259</td><td>22</td><td>🇺🇸</td><td>Oregon</td><td>2</td><td>2</td><td>15,3</td><td>3,5</td><td>7</td><td>1,2</td><td>0,6</td></tr>
-    <tr><td>PG</td><td>Antione Birley</td><td>6-5</td><td>165</td><td>22</td><td>🇺🇸</td><td>Syracuse</td><td>1</td><td>2</td><td>13</td><td>6,3</td><td>6,6</td><td>1,3</td><td>1,3</td></tr>
-    <tr><td>SG</td><td>Greg Skipworth</td><td>6-8</td><td>223</td><td>23</td><td>🇺🇸</td><td>AZ State</td><td>2</td><td>2</td><td>8,7</td><td>3,2</td><td>3,9</td><td>0,7</td><td>0,7</td></tr>
-    <tr><td>SF</td><td>Jonte Slane</td><td>6-6</td><td>200</td><td>22</td><td>🇺🇸</td><td>Oregon</td><td>1</td><td>1</td><td>6,4</td><td>2,7</td><td>4,9</td><td>0,6</td><td>0,6</td></tr>
-</tbody></table>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Gustavo Ayon</b><br><span class="college-label">None</span></td><td class="age-text">26</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Marcus Newton</b><br><span class="college-label">Notre Dame</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Lance Thomas</b><br><span class="college-label">Duke</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Juma Johnson</b><br><span class="college-label">Mississippi State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Greg Stiemsma</b><br><span class="college-label">Wisconsin</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Malcolm Delaney</b><br><span class="college-label">Virginia Tech</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Ivan Johnson</b><br><span class="college-label">Oregon</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Darius Morris</b><br><span class="college-label">Michigan</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Jeremy Pargo</b><br><span class="college-label">Gonzaga</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Chris Wright</b><br><span class="college-label">Dayton</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+
+  <tr><td><span class="pos-badge">C</span></td><td><b>Greg Smith</b><br><span class="college-label">Cal State Fresno</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Charles Jenkins</b><br><span class="college-label">Hofstra</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Sean Miller</b><br><span class="college-label">Central Michigan</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Adrian Ray</b><br><span class="college-label">North Carolina</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Jan Vesely</b><br><span class="college-label">None</span></td><td class="age-text">21</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Jeremy Tyler</b><br><span class="college-label">None</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Gregg Heard</b><br><span class="college-label">Colorado</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Chris Singleton</b><br><span class="college-label">Florida State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Alain Leconte</b><br><span class="college-label">France</span></td><td class="age-text">20</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Jerome Dyson</b><br><span class="college-label">Connecticut</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Jimmer Fredette</b><br><span class="college-label">BYU</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Xavier Silas</b><br><span class="college-label">Northern Illinois</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Grisha Pejanovic</b><br><span class="college-label">Bosnia</span></td><td class="age-text">21</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Josh Harrellson</b><br><span class="college-label">Kentucky</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Mindaugas Kuzminskas</b><br><span class="college-label">Lithuania</span></td><td class="age-text">22</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>D.J. Kennedy</b><br><span class="college-label">St. John's</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Jay Lee</b><br><span class="college-label">Temple</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Justin Dentmon</b><br><span class="college-label">Washington</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Josh Magette</b><br><span class="college-label">Alabama</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Kelvin Williams</b><br><span class="college-label">Marquette</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Jeff Groves</b><br><span class="college-label">Hawaii</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Terrel Harris</b><br><span class="college-label">Oklahoma State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Darius Prince</b><br><span class="college-label">Duke</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>James Sanders</b><br><span class="college-label">Tennessee</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Eric Dawson</b><br><span class="college-label">Midwestern State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Malcolm Lee</b><br><span class="college-label">UCLA</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Brian Jack</b><br><span class="college-label">Florida</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Courtney Fortson</b><br><span class="college-label">Arkansas</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Jordan Williams</b><br><span class="college-label">Maryland</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Andrew Goudelock</b><br><span class="college-label">Charleston</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Justin Harper</b><br><span class="college-label">Richmond</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Jabari Dowling</b><br><span class="college-label">Dayton</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Nolan Smith</b><br><span class="college-label">Duke</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Metody Wyndrowski</b><br><span class="college-label">Poland</span></td><td class="age-text">18</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Connor Joseph</b><br><span class="college-label">Stanford</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Walker Russell</b><br><span class="college-label">Jacksonville State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Julyan Stone</b><br><span class="college-label">UTEP</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Antonio Burton</b><br><span class="college-label">Wichita State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Mickell Gladness</b><br><span class="college-label">Alabama A&M</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Cory Higgins</b><br><span class="college-label">Colorado</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Brian Givens</b><br><span class="college-label">Cincinnati</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Edwin Ubiles</b><br><span class="college-label">Siena College</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Matt Davis</b><br><span class="college-label">California</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Derrick Howard</b><br><span class="college-label">VA Commonwealth</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Josh Selby</b><br><span class="college-label">Kansas</span></td><td class="age-text">SO</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Jerry Smith</b><br><span class="college-label">Louisville</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>JaJuan Johnson</b><br><span class="college-label">Purdue</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PG</span></td><td><b>Keaton Johnson</b><br><span class="college-label">Oregon State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Keith Benson</b><br><span class="college-label">Oakland</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Jeff Foote</b><br><span class="college-label">Cornell</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SF</span></td><td><b>Tyler Honeycutt</b><br><span class="college-label">UCLA</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">PF</span></td><td><b>Dennis Horner</b><br><span class="college-label">North Carolina State</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">SG</span></td><td><b>Travis Leslie</b><br><span class="college-label">Georgia</span></td><td class="age-text">JR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+  <tr><td><span class="pos-badge">C</span></td><td><b>Vernon Macklin</b><br><span class="college-label">Florida</span></td><td class="age-text">SR</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td><td class="zero-stat">0.0</td></tr>
+</table>
+        </tbody>
+    </table>
+</section>
