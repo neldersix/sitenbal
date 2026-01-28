@@ -97,87 +97,83 @@
         return baseName.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
-    // Função que processa o texto bruto do CSV
     function processData(csvText) {
         const grid = document.getElementById('market-grid');
         const rows = csvText.split('\n').slice(1).filter(row => row.trim() !== ""); 
         grid.innerHTML = '';
 
         rows.forEach(row => {
-    const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-    
-    if (columns.length >= 4) {
-        // Coluna A (Índice 0): Carimbo de data/hora do Google
-        const dataHoraRaw = columns[0]?.replace(/"/g, "").trim();
-        const time = columns[1]?.replace(/"/g, "").trim();
-        const disponiveis = columns[2]?.replace(/"/g, "").trim();
-        const busca = columns[3]?.replace(/"/g, "").trim();
-        const agressividade = columns[4]?.replace(/"/g, "").trim() || "Normal";
-        const mensagemCurta = columns[5]?.replace(/"/g, "").trim() || "";
-        const whatsapp = columns[6]?.replace(/"/g, "").trim();
+            const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+            
+            if (columns.length >= 4) {
+                const dataHoraRaw = columns[0]?.replace(/"/g, "").trim();
+                const time = columns[1]?.replace(/"/g, "").trim();
+                const disponiveis = columns[2]?.replace(/"/g, "").trim();
+                const busca = columns[3]?.replace(/"/g, "").trim();
+                const agressividade = columns[4]?.replace(/"/g, "").trim() || "Normal";
+                const mensagemCurta = columns[5]?.replace(/"/g, "").trim() || "";
+                const whatsapp = columns[6]?.replace(/"/g, "").trim();
 
-        const logoFile = formatLogoName(time);
+                const logoFile = formatLogoName(time);
 
-        // Lógica para formatar Data e Hora
-        let carimboFinal = "Recente";
-        if (dataHoraRaw) {
-            const partes = dataHoraRaw.split(" ");
-            const data = partes[0]; // Pega 28/01/2026
-            const horaCompleta = partes[1] || "";
-            const horaFormatada = horaCompleta.substring(0, 5); // Pega apenas 02:38
-            carimboFinal = `${data} às ${horaFormatada}`;
-        }
+                let carimboFinal = "Recente";
+                if (dataHoraRaw) {
+                    const partes = dataHoraRaw.split(" ");
+                    const data = partes[0]; 
+                    const horaCompleta = partes[1] || "";
+                    const horaFormatada = horaCompleta.substring(0, 5);
+                    carimboFinal = `${data} às ${horaFormatada}`;
+                }
 
-        let botaoWhatsapp = '';
-        if (whatsapp && whatsapp.length > 5) {
-            let numLimpo = whatsapp.replace(/\D/g, '');
-            if (numLimpo.length <= 11) numLimpo = '55' + numLimpo;
-            botaoWhatsapp = `<a href="https://wa.me/${numLimpo}?text=Vi seu Trade Block do ${time} no site!" target="_blank" class="btn-wa">PROPOR TROCA</a>`;
-        }
+                let botaoWhatsapp = '';
+                if (whatsapp && whatsapp.length > 5) {
+                    let numLimpo = whatsapp.replace(/\D/g, '');
+                    if (numLimpo.length <= 11) numLimpo = '55' + numLimpo;
+                    botaoWhatsapp = `<a href="https://wa.me/${numLimpo}?text=Vi seu Trade Block do ${time} no site!" target="_blank" class="btn-wa">PROPOR TROCA</a>`;
+                }
 
-        grid.innerHTML += `
-            <div class="trade-card">
-                <div style="font-size: 0.7rem; color: #888; position: absolute; top: 12px; right: 15px; font-weight: 500;">
-                    Atualizado em: ${carimboFinal}
-                </div>
+                grid.innerHTML += `
+                    <div class="trade-card">
+                        <div style="font-size: 0.7rem; color: #888; position: absolute; top: 12px; right: 15px; font-weight: 500;">
+                            Atualizado em: ${carimboFinal}
+                        </div>
 
-                <div class="card-header" style="display:flex; align-items:center; gap:15px; margin-top:12px; margin-bottom:15px;">
-                    <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'" style="width:50px; height:50px; object-fit:contain;">
-                    <h3 class="team-title" style="margin:0">${time}</h3>
-                </div>
+                        <div class="card-header">
+                            <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'">
+                            <h3 class="team-title">${time}</h3>
+                        </div>
 
-                <span class="label">NÍVEL DE INTERESSE</span>
-                <span class="content" style="color: ${agressividade.includes('Agressivo') ? '#ff4d4d' : '#00d1ff'}">${agressividade}</span>
+                        <span class="label">NÍVEL DE INTERESSE</span>
+                        <span class="content" style="color: ${agressividade.includes('Agressivo') ? '#ff4d4d' : '#00d1ff'}">${agressividade}</span>
 
-                <span class="label">DISPONÍVEIS</span>
-                <span class="content">${disponiveis}</span>
+                        <span class="label">DISPONÍVEIS</span>
+                        <span class="content">${disponiveis}</span>
 
-                <span class="label">PROCURA</span>
-                <span class="content">${busca}</span>
+                        <span class="label">PROCURA</span>
+                        <span class="content">${busca}</span>
 
-                ${mensagemCurta ? `
-                    <span class="label">RECADO DO GM</span>
-                    <span class="content" style="font-style: italic; color: #aaa; font-size: 0.9rem;">"${mensagemCurta}"</span>
-                ` : ''}
+                        ${mensagemCurta ? `
+                            <span class="label">RECADO DO GM</span>
+                            <span class="content" style="font-style: italic; color: #aaa; font-size: 0.9rem;">"${mensagemCurta}"</span>
+                        ` : ''}
 
-                ${botaoWhatsapp}
-            </div>
-        `;
-    }
-});
+                        ${botaoWhatsapp}
+                    </div>
+                `;
+            }
+        }); // Fim do forEach
+    } // Fim da função processData (Essa era a chave que faltava!)
 
-    // Tenta carregar os dados da planilha
+    // Chamada dos dados
     fetch(CSV_URL)
         .then(response => response.text())
         .then(text => processData(text))
         .catch(err => {
-            console.error("Erro no carregamento direto, tentando proxy...");
+            console.error("Tentando proxy...");
             fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(CSV_URL)}`)
                 .then(res => res.text())
-                .then(text => processData(text))
-                .catch(proxyErr => console.error("Erro total:", proxyErr));
+                .then(text => processData(text));
         });
-        
 </script>
 </body>
 </html>
