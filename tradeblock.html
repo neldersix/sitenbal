@@ -90,52 +90,78 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Tabletop.js/1.5.2/tabletop.min.js"></script>
 <script>
-    // Seu link de publicação (precisa ser o link de "Página da Web" e não CSV para o Tabletop)
-    const public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQY_bYpPT5GooBn-LXk7Jdf_lm2BhsKMl8AQSwunSWcAQdb5m_z0Ej_nEjz3xmsJlfo5oLot4nFwMpr/pubhtml';
+    // Link da planilha formatado para visualização de dados
+    const SHEET_ID = '1vQY_bYpPT5GooBn-LXk7Jdf_lm2BhsKMl8AQSwunSWcAQdb5m_z0Ej_nEjz3xmsJlfo5oLot4nFwMpr';
+    const GID = '1920462694';
+    const URL = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?gid=${GID}&single=true&output=csv`;
 
-    function init() {
-        Tabletop.init({
-            key: public_spreadsheet_url,
-            callback: showInfo,
-            simpleSheet: true
-        });
+    // Função para formatar o nome do logo igual aos seus arquivos
+    function formatLogoName(name) {
+        if (!name) return 'nba-logo';
+        return name.toLowerCase()
+                   .trim()
+                   .replace(/\s+/g, '-')
+                   .normalize("NFD")
+                   .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function showInfo(data, tabletop) {
+    async function loadTrades() {
         const grid = document.getElementById('market-grid');
-        grid.innerHTML = '';
-
-        data.forEach(row => {
-            // Os nomes abaixo devem ser EXATAMENTE iguais aos títulos da sua planilha
-            const time = row['Nome do Time'];
-            const disponiveis = row['Jogadores Disponíveis'];
-            const busca = row['O que seu time busca'];
-            const agressividade = row['Nível de Agressividade'];
-            const mensagem = row['Mensagem Curta'];
-
-            // Lógica do Logo
-            const logoFile = time.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        
+        try {
+            // Usando um proxy gratuito para evitar o bloqueio do navegador (CORS)
+            const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(URL)}`);
+            const json = await response.json();
+            const csvText = json.contents;
             
-            grid.innerHTML += `
-                <div class="trade-card">
-                    <div class="card-header">
-                        <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'">
-                        <h3 class="team-title">${time}</h3>
-                    </div>
-                    <span class="label">Agressividade</span>
-                    <span class="content">${agressividade}</span>
-                    <span class="label">Disponíveis</span>
-                    <span class="content">${disponiveis}</span>
-                    <span class="label">Busca</span>
-                    <span class="content">${busca}</span>
-                    <p class="content" style="font-style: italic; margin-top:10px;">"${mensagem}"</p>
-                    <a href="https://wa.me/SEUNUMERO" class="btn-wa">PROPOR TROCA</a>
-                </div>
-            `;
-        });
+            const rows = csvText.split('\n').slice(1); 
+            grid.innerHTML = '';
+
+            rows.forEach(row => {
+                // Separa as colunas corretamente
+                const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                
+                if (columns.length >= 4) {
+                    const time = columns[1].replace(/"/g, "").trim();
+                    const disponiveis = columns[2].replace(/"/g, "").trim();
+                    const busca = columns[3].replace(/"/g, "").trim();
+                    const agressividade = columns[4] ? columns[4].replace(/"/g, "").trim() : "3";
+                    
+                    const logoFile = formatLogoName(time);
+
+                    grid.innerHTML += `
+                        <div class="trade-card">
+                            <div class="card-header">
+                                <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'">
+                                <h3 class="team-title">${time}</h3>
+                            </div>
+                            
+                            <span class="label">Status</span>
+                            <span class="content">${agressividade}</span>
+
+                            <span class="label">Disponíveis</span>
+                            <span class="content">${disponiveis}</span>
+
+                            <span class="label">Procura</span>
+                            <span class="content">${busca}</span>
+
+                            <a href="https://wa.me/5511999999999" target="_blank" class="btn-wa">PROPOR TROCA</a>
+                        </div>
+                    `;
+                }
+            });
+
+            if (grid.innerHTML === '') {
+                grid.innerHTML = "<p style='text-align:center; width:100%'>Nenhuma resposta encontrada na planilha.</p>";
+            }
+
+        } catch (e) {
+            console.error("Erro detalhado:", e);
+            grid.innerHTML = "<p style='text-align:center; width:100%'>Erro ao conectar com a planilha. Verifique se ela está 'Publicada na Web'.</p>";
+        }
     }
 
-    window.addEventListener('DOMContentLoaded', init);
+    loadTrades();
 </script>
 </body>
 </html>
