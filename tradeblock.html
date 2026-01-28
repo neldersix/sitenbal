@@ -166,16 +166,16 @@
     }
 });
 
-    // Tenta carregar usando um método alternativo que o Google Sheets aceita melhor
+    // Tenta carregar os dados da planilha
     fetch(CSV_URL)
         .then(response => response.text())
         .then(text => processData(text))
         .catch(err => {
             console.error("Erro no carregamento direto, tentando proxy...");
-            // Se o direto falhar (CORS local), tentamos o AllOrigins mas pegando o texto bruto
             fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(CSV_URL)}`)
                 .then(res => res.text())
-                .then(text => processData(text));
+                .then(text => processData(text))
+                .catch(proxyErr => console.error("Erro total:", proxyErr));
         });
 </script>
 </body>
