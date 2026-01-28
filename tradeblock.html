@@ -89,88 +89,86 @@
         </div>
 
 <script>
-    // Link da sua planilha formatado para leitura direta de dados
-    const spreadsheetId = '1vQY_bYpPT5GooBn-LXk7Jdf_lm2BhsKMl8AQSwunSWcAQdb5m_z0Ej_nEjz3xmsJlfo5oLot4nFwMpr';
-    const gid = '1920462694';
-    const jsonUrl = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json&tq&gid=${gid}`;
+    // Link exato da sua planilha publicada como CSV
+    const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQY_bYpPT5GooBn-LXk7Jdf_lm2BhsKMl8AQSwunSWcAQdb5m_z0Ej_nEjz3xmsJlfo5oLot4nFwMpr/pub?gid=1920462694&single=true&output=csv';
 
     function formatLogoName(name) {
         if (!name) return 'nba-logo';
+        // Limpa o nome para achar o arquivo .png (ex: "Chicago Bulls - MJ" vira "chicago-bulls")
         const baseName = name.split('-')[0].trim(); 
-        return baseName.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return baseName.toLowerCase()
+                   .replace(/\s+/g, '-')
+                   .normalize("NFD")
+                   .replace(/[\u0300-\u036f]/g, "");
     }
 
     async function loadTrades() {
         const grid = document.getElementById('market-grid');
         
         try {
-            const response = await fetch(jsonUrl);
-            const text = await response.text();
+            // AllOrigins ajuda a pular o bloqueio de segurança do navegador
+            const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(CSV_URL)}&cache=${Date.now()}`);
+            const json = await response.json();
+            const csvText = json.contents;
             
-            // O Google retorna um JSON "sujo", precisamos limpar para o JS entender
-            const jsonText = text.substring(text.indexOf("google.visualization.Query.setResponse(") + 38, text.length - 2);
-            const data = JSON.parse(jsonText);
-            const rows = data.table.rows;
-
+            // Divide as linhas e pula o cabeçalho
+            const rows = csvText.split('\n').slice(1).filter(row => row.trim() !== ""); 
             grid.innerHTML = '';
 
-            rows.forEach(rowData => {
-                const cols = rowData.c;
+            rows.forEach(row => {
+                // Separa colunas respeitando vírgulas dentro de aspas
+                const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
                 
-                // Mapeamento das colunas da planilha
-                const dataHora = cols[0]?.f || ""; // Coluna A
-                const time = cols[1]?.v || "";     // Coluna B
-                const disponiveis = cols[2]?.v || ""; // Coluna C
-                const busca = cols[3]?.v || "";    // Coluna D
-                const agressividade = cols[4]?.v || "Normal"; // Coluna E
-                const mensagemCurta = cols[5]?.v || ""; // Coluna F (Mensagem Curta)
-                const whatsapp = cols[6]?.v || "";  // Coluna G (WhatsApp)
+                if (columns.length >= 4) {
+                    const dataHoraRaw = columns[0]?.replace(/"/g, "").trim(); // Coluna A
+                    const time = columns[1]?.replace(/"/g, "").trim();        // Coluna B
+                    const disponiveis = columns[2]?.replace(/"/g, "").trim(); // Coluna C
+                    const busca = columns[3]?.replace(/"/g, "").trim();       // Coluna D
+                    const agressividade = columns[4]?.replace(/"/g, "").trim() || "Normal"; // Coluna E
+                    const mensagemCurta = columns[5]?.replace(/"/g, "").trim() || "";       // Coluna F
+                    const whatsapp = columns[6]?.replace(/"/g, "").trim();    // Coluna G
 
-                if (!time) return;
+                    const logoFile = formatLogoName(time);
 
-                const logoFile = formatLogoName(time);
+                    // Formatação da Data/Hora
+                    let dataFormatada = "";
+                    if (dataHoraRaw) {
+                        const parts = dataHoraRaw.split(" ");
+                        dataFormatada = parts[0] + (parts[1] ? " às " + parts[1].substring(0, 5) : "");
+                    }
 
-                // Lógica do WhatsApp
-                let botaoWhatsapp = '';
-                if (whatsapp) {
-                    let numLimpo = String(whatsapp).replace(/\D/g, '');
-                    if (numLimpo.length <= 11) numLimpo = '55' + numLimpo;
-                    botaoWhatsapp = `<a href="https://wa.me/${numLimpo}?text=Olá! Vi seu Trade Block do ${time}. Podemos negociar?" target="_blank" class="btn-wa">PROPOR TROCA</a>`;
+                    // Botão WhatsApp com prefixo 55
+                    let botaoWhatsapp = '';
+                    if (whatsapp && whatsapp.length > 5) {
+                        let numLimpo = whatsapp.replace(/\D/g, '');
+                        if (numLimpo.length <= 11) numLimpo = '55' + numLimpo;
+                        botaoWhatsapp = `<a href="https://wa.me/${numLimpo}?text=Olá! Vi seu Trade Block do ${time}. Podemos negociar?" target="_blank" class="btn-wa">PROPOR TROCA</a>`;
+                    }
+
+                    grid.innerHTML += `
+                        <div class="trade-card">
+                            <div style="font-size: 0.65rem; color: #666; position: absolute; top: 10px; right: 15px;">
+                                Atualizado em: ${dataFormatada}
+                            </div>
+                            <div class="card-header" style="display:flex; align-items:center; gap:15px; margin-top:10px; margin-bottom:15px;">
+                                <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'" style="width:50px; height:50px; object-fit:contain;">
+                                <h3 class="team-title" style="margin:0">${time}</h3>
+                            </div>
+                            <span class="label">STATUS / AGRESSIVIDADE</span>
+                            <span class="content" style="color: ${agressividade.includes('Agressivo') ? '#ff4d4d' : '#00d1ff'}">${agressividade}</span>
+                            <span class="label">DISPONÍVEIS</span>
+                            <span class="content">${disponiveis}</span>
+                            <span class="label">PROCURA</span>
+                            <span class="content">${busca}</span>
+                            ${mensagemCurta ? `<span class="label">RECADO DO GM</span><span class="content" style="font-style: italic; color: #aaa;">"${mensagemCurta}"</span>` : ''}
+                            ${botaoWhatsapp}
+                        </div>
+                    `;
                 }
-
-                grid.innerHTML += `
-                    <div class="trade-card">
-                        <div style="font-size: 0.65rem; color: #666; position: absolute; top: 10px; right: 15px;">
-                            Atualizado em: ${dataHora}
-                        </div>
-
-                        <div class="card-header" style="display:flex; align-items:center; gap:15px; margin-top:10px; margin-bottom:15px;">
-                            <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'" style="width:50px; height:50px; object-fit:contain;">
-                            <h3 class="team-title" style="margin:0">${time}</h3>
-                        </div>
-
-                        <span class="label">STATUS / AGRESSIVIDADE</span>
-                        <span class="content" style="color: ${String(agressividade).includes('Agressivo') ? '#ff4d4d' : '#00d1ff'}">${agressividade}</span>
-
-                        <span class="label">DISPONÍVEIS</span>
-                        <span class="content">${disponiveis}</span>
-
-                        <span class="label">PROCURA</span>
-                        <span class="content">${busca}</span>
-
-                        ${mensagemCurta ? `
-                            <span class="label">MENSAGEM DO GM</span>
-                            <span class="content" style="font-style: italic; color: #aaa;">"${mensagemCurta}"</span>
-                        ` : ''}
-
-                        ${botaoWhatsapp}
-                    </div>
-                `;
             });
-
         } catch (e) {
-            console.error("Erro ao processar dados:", e);
-            grid.innerHTML = "<p style='text-align:center; color:white;'>Sincronizando com a liga...</p>";
+            console.error("Erro:", e);
+            grid.innerHTML = "<p style='text-align:center; color:white;'>Carregando dados da liga...</p>";
         }
     }
 
