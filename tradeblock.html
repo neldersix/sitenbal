@@ -143,6 +143,10 @@
         if (whatsapp && whatsapp.length > 5) {
             // Remove espaços ou caracteres especiais do número para o link funcionar
             const numLimpo = whatsapp.replace(/\D/g, '');
+
+            if (numLimpo.length <= 11) {
+        numLimpo = '55' + numLimpo;
+    }
             botaoWhatsapp = `<a href="https://wa.me/${numLimpo}?text=Olá! Vi seu TradeBlock do ${time}. Podemos negociar?" target="_blank" class="btn-wa">PROPOR TROCA</a>`;
         }
 
