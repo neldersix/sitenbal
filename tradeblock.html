@@ -110,40 +110,62 @@
             grid.innerHTML = '';
 
             rows.forEach(row => {
+    // Regex para separar as colunas sem quebrar em vírgulas dentro de aspas
     const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
     
     if (columns.length >= 4) {
+        // Coluna A (Índice 0): Data e Hora (Carimbo do Google)
+        const dataHoraRaw = columns[0]?.replace(/"/g, "").trim();
+        // Coluna B (Índice 1): Nome do Time
         const time = columns[1]?.replace(/"/g, "").trim();
+        // Coluna C (Índice 2): Disponíveis
         const disponiveis = columns[2]?.replace(/"/g, "").trim();
+        // Coluna D (Índice 3): Busca
         const busca = columns[3]?.replace(/"/g, "").trim();
-        // Pega a coluna E (índice 4) para a Agressividade
-        const agressividade = columns[4]?.replace(/"/g, "").trim() || "Não informado";
-        // Pega a coluna G (índice 6) para o WhatsApp (adicione no Forms)
+        // Coluna E (Índice 4): Agressividade
+        const agressividade = columns[4]?.replace(/"/g, "").trim() || "Normal";
+        // Coluna G (Índice 6): WhatsApp (Supondo que seja a 7ª coluna)
         const whatsapp = columns[6]?.replace(/"/g, "").trim();
         
         const logoFile = formatLogoName(time);
 
-        // Lógica para o botão aparecer apenas se houver número
+        // Formatação simples da data (DD/MM às HH:MM)
+        let dataFormatada = "";
+        if (dataHoraRaw) {
+            const dataParts = dataHoraRaw.split(" ");
+            dataFormatada = dataParts[0]; // Pega a data
+            const horaParts = dataParts[1]?.split(":");
+            if (horaParts) dataFormatada += ` às ${horaParts[0]}:${horaParts[1]}`;
+        }
+
+        // Lógica do botão de WhatsApp
         let botaoWhatsapp = '';
         if (whatsapp && whatsapp.length > 5) {
-            botaoWhatsapp = `<a href="https://wa.me/${whatsapp}?text=Olá! Tenho interesse no Trade Block do ${time}." target="_blank" class="btn-wa">PROPOR TROCA</a>`;
+            // Remove espaços ou caracteres especiais do número para o link funcionar
+            const numLimpo = whatsapp.replace(/\D/g, '');
+            botaoWhatsapp = `<a href="https://wa.me/${numLimpo}?text=Olá! Vi seu Trade Block do ${time}. Podemos negociar?" target="_blank" class="btn-wa">PROPOR TROCA</a>`;
         }
 
         grid.innerHTML += `
             <div class="trade-card">
-                <div class="card-header">
-                    <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'">
-                    <h3 class="team-title">${time}</h3>
+                <div style="font-size: 0.65rem; color: #666; position: absolute; top: 10px; right: 15px;">
+                    Atualizado em: ${dataFormatada}
                 </div>
-                <span class="label">STATUS / AGRESSIVIDADE</span>
-                <span class="content">${agressividade}</span>
-                
-                <span class="label">DISPONÍVEIS</span>
+
+                <div class="card-header" style="display:flex; align-items:center; gap:15px; margin-top:10px; margin-bottom:15px;">
+                    <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'" style="width:50px; height:50px; object-fit:contain;">
+                    <h3 class="team-title" style="margin:0">${time}</h3>
+                </div>
+
+                <span class="label">Nível de Interesse</span>
+                <span class="content" style="color: ${agressividade.includes('Agressivo') ? '#ff4d4d' : '#00d1ff'}">${agressividade}</span>
+
+                <span class="label">Disponíveis</span>
                 <span class="content">${disponiveis}</span>
-                
-                <span class="label">PROCURA</span>
+
+                <span class="label">Procura</span>
                 <span class="content">${busca}</span>
-                
+
                 ${botaoWhatsapp}
             </div>
         `;
