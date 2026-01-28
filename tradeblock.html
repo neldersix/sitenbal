@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Trade Block - Oficial</title>
+    <style>
+        :root {
+            --primary: #ce1141;
+            --secondary: #1d428a;
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+        }
+
+        body { background: var(--bg); font-family: 'Segoe UI', sans-serif; color: white; margin: 0; padding-bottom: 50px; }
+
+        .header-section { 
+            text-align: center; 
+            padding: 50px 20px; 
+            background: linear-gradient(180deg, rgba(29,66,138,0.2) 0%, rgba(18,18,18,1) 100%); 
+        }
+
+        .btn-update {
+            display: inline-block; background: var(--primary); color: white; padding: 14px 28px;
+            text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(206,17,65,0.3);
+        }
+        .btn-update:hover { transform: scale(1.05); background: #a00d32; }
+
+        .trade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .trade-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .trade-card:hover { transform: translateY(-8px); border-color: var(--secondary); }
+
+        /* Estilo do Topo do Card com Logo */
+        .card-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+        .team-logo { 
+            width: 55px; 
+            height: 55px; 
+            object-fit: contain; 
+            background: white; 
+            border-radius: 50%; 
+            padding: 5px;
+            border: 2px solid var(--secondary);
+        }
+        .team-title { font-size: 1.25rem; font-weight: bold; margin: 0; }
+
+        .label { color: var(--primary); font-size: 0.7rem; font-weight: bold; text-transform: uppercase; display: block; margin-top: 12px; }
+        .content { color: #ddd; font-size: 0.95rem; line-height: 1.5; margin-top: 3px; }
+
+        .btn-wa {
+            display: block; background: #25d366; color: white; text-align: center;
+            padding: 12px; text-decoration: none; border-radius: 8px; margin-top: 25px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1 style="letter-spacing: 3px;">TRADE BLOCK CENTRAL</h1>
+        <p style="color: #888; margin-bottom: 25px;">Atualizações em tempo real do mercado da liga.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsrulkd1CmkTryfmhPcyhBz1eyxA6iZ-JBO1iNWWj80Tn49g/viewform" target="_blank" class="btn-update">+ ATUALIZAR MEU TIME</a>
+    </div>
+
+    <div class="trade-grid" id="market-grid">
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Tabletop.js/1.5.2/tabletop.min.js"></script>
+<script>
+    // Seu link de publicação (precisa ser o link de "Página da Web" e não CSV para o Tabletop)
+    const public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQY_bYpPT5GooBn-LXk7Jdf_lm2BhsKMl8AQSwunSWcAQdb5m_z0Ej_nEjz3xmsJlfo5oLot4nFwMpr/pubhtml';
+
+    function init() {
+        Tabletop.init({
+            key: public_spreadsheet_url,
+            callback: showInfo,
+            simpleSheet: true
+        });
+    }
+
+    function showInfo(data, tabletop) {
+        const grid = document.getElementById('market-grid');
+        grid.innerHTML = '';
+
+        data.forEach(row => {
+            // Os nomes abaixo devem ser EXATAMENTE iguais aos títulos da sua planilha
+            const time = row['Nome do Time'];
+            const disponiveis = row['Jogadores Disponíveis'];
+            const busca = row['O que seu time busca'];
+            const agressividade = row['Nível de Agressividade'];
+            const mensagem = row['Mensagem Curta'];
+
+            // Lógica do Logo
+            const logoFile = time.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            
+            grid.innerHTML += `
+                <div class="trade-card">
+                    <div class="card-header">
+                        <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'">
+                        <h3 class="team-title">${time}</h3>
+                    </div>
+                    <span class="label">Agressividade</span>
+                    <span class="content">${agressividade}</span>
+                    <span class="label">Disponíveis</span>
+                    <span class="content">${disponiveis}</span>
+                    <span class="label">Busca</span>
+                    <span class="content">${busca}</span>
+                    <p class="content" style="font-style: italic; margin-top:10px;">"${mensagem}"</p>
+                    <a href="https://wa.me/SEUNUMERO" class="btn-wa">PROPOR TROCA</a>
+                </div>
+            `;
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
