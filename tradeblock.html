@@ -124,6 +124,8 @@
         const busca = columns[3]?.replace(/"/g, "").trim();
         // Coluna E (Índice 4): Agressividade
         const agressividade = columns[4]?.replace(/"/g, "").trim() || "Normal";
+        // Coluna F (Índice 5) - Mensagem Curta
+        const mensagemCurta = columns[5]?.replace(/"/g, "").trim() || "";
         // Coluna G (Índice 6): WhatsApp (Supondo que seja a 7ª coluna)
         const whatsapp = columns[6]?.replace(/"/g, "").trim();
         
