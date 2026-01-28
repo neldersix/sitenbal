@@ -110,33 +110,45 @@
             grid.innerHTML = '';
 
             rows.forEach(row => {
-                const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-                
-                if (columns.length >= 4) {
-                    const time = columns[1].replace(/"/g, "").trim();
-                    const disponiveis = columns[2].replace(/"/g, "").trim();
-                    const busca = columns[3].replace(/"/g, "").trim();
-                    const agressividade = columns[4] ? columns[4].replace(/"/g, "").trim() : "Normal";
-                    
-                    const logoFile = formatLogoName(time);
+    const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+    
+    if (columns.length >= 4) {
+        const time = columns[1]?.replace(/"/g, "").trim();
+        const disponiveis = columns[2]?.replace(/"/g, "").trim();
+        const busca = columns[3]?.replace(/"/g, "").trim();
+        // Pega a coluna E (índice 4) para a Agressividade
+        const agressividade = columns[4]?.replace(/"/g, "").trim() || "Não informado";
+        // Pega a coluna G (índice 6) para o WhatsApp (adicione no Forms)
+        const whatsapp = columns[6]?.replace(/"/g, "").trim();
+        
+        const logoFile = formatLogoName(time);
 
-                    grid.innerHTML += `
-                        <div class="trade-card">
-                            <div class="card-header" style="display:flex; align-items:center; gap:15px; margin-bottom:15px;">
-                                <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'" style="width:50px; height:50px; object-fit:contain;">
-                                <h3 class="team-title" style="margin:0">${time}</h3>
-                            </div>
-                            <span class="label">Status</span>
-                            <span class="content">${agressividade}</span>
-                            <span class="label">Disponíveis</span>
-                            <span class="content">${disponiveis}</span>
-                            <span class="label">Procura</span>
-                            <span class="content">${busca}</span>
-                            <a href="https://wa.me/5511999999999" target="_blank" class="btn-wa">PROPOR TROCA</a>
-                        </div>
-                    `;
-                }
-            });
+        // Lógica para o botão aparecer apenas se houver número
+        let botaoWhatsapp = '';
+        if (whatsapp && whatsapp.length > 5) {
+            botaoWhatsapp = `<a href="https://wa.me/${whatsapp}?text=Olá! Tenho interesse no Trade Block do ${time}." target="_blank" class="btn-wa">PROPOR TROCA</a>`;
+        }
+
+        grid.innerHTML += `
+            <div class="trade-card">
+                <div class="card-header">
+                    <img src="logos/${logoFile}.png" class="team-logo" onerror="this.src='logos/nba-logo.png'">
+                    <h3 class="team-title">${time}</h3>
+                </div>
+                <span class="label">STATUS / AGRESSIVIDADE</span>
+                <span class="content">${agressividade}</span>
+                
+                <span class="label">DISPONÍVEIS</span>
+                <span class="content">${disponiveis}</span>
+                
+                <span class="label">PROCURA</span>
+                <span class="content">${busca}</span>
+                
+                ${botaoWhatsapp}
+            </div>
+        `;
+    }
+});
         } catch (e) {
             grid.innerHTML = "<p style='text-align:center; color:white;'>Aguardando conexão com a planilha...</p>";
         }
